@@ -9,22 +9,22 @@ gsap.to("#about_title", {
   ease: "none",
   scrollTrigger: {
     trigger: "#about_page",
-    start: "top top",
+    start: "top-=50 top",
     endTrigger: "#about_container",
-    end: "top center",
+    end: "bottom-=100 bottom",
     scrub: true
   }
 })
 
 gsap.to("#about_line", {
-    width: "90%",          
+    width: "100%",          
     y: container.offsetTop - (about_line.offsetTop + about_line.offsetHeight * 0.4),
     ease: "none",
     scrollTrigger: {
     trigger: "#about_page",
-    start: "top top",
+    start: "top-=50 top",
     endTrigger: "#about_container",
-    end: "top center",
+    end: "bottom-=100 bottom",
     scrub: true
   }
 })

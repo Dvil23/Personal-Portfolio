@@ -29,18 +29,9 @@ h1
     font-family: "Passion One", sans-serif
     font-weight: 700
 
-// #floating_circle
-//     position: fixed        
-//     bottom: 20px
-//     // left: 10vw
-//     width: 60px
-//     height: 60px
-//     border-radius: 50%
-//     background-color: white
-//     z-index: 9999
 
 #page
-    width: 100vw
+    width: 100%
     min-height: 100vh
     background-color: var(--color-back-black)
     #home_page
@@ -51,46 +42,123 @@ h1
         height: 100vh
         width: 100%
 
-    #about_page
-        position: relative
+    .port_section
         width: 100%
         min-height: 100vh
-        // height: 200vh
-        // background: linear-gradient(to bottom, #8026a3, #13c27c)
-        display: flex
-        flex-direction: column
-        align-items: center
-        padding-bottom: 5vh
-        #about_title
-            --element-width: 85vw
-            width: var(--element-width)
-            outline: 1px solid red
-            line-height: 1
-            transform-origin: center top
-            font-size: calc(var(--element-width) / 5)
-            text-align: center
-            h1
-                font-size: calc(var(--element-width) / 1)
-        #about_line
-            height: 4px           
-            width: 0%             
-            background-color: white
-            margin-top: 20px    
-        #about_container
-
-            margin-top: 80vh
-            width: 90%
-            text-align: center
-            font-size: 1.2rem
-            height: 70vh
-            border: 1px solid blue
-    #skills_page
-        position: relative
-        width: 100%
-        min-height: 200vh
         background: linear-gradient(to bottom, #8026a3, #13c27c)
         display: flex
         flex-direction: column
         align-items: center
+        padding-top: 5vh
+        padding-bottom: 5vh
+        box-sizing: content-box
+        .title_container
+            border-bottom: 4px solid white
+            h1
+                --element-width: 85vw
+                width: var(--element-width)
+                line-height: 1
+                transform-origin: center top
+                font-size: calc(var(--element-width) / 5 *0.4)
+                text-align: center
+                
+    #about_page
+        position: relative
+        height: auto
+        min-height: auto
+        #about_title_container
+            height: 80vh
+            border: 1px solid green
+            width: 90%
+            display: flex
+            flex-direction: column
+            align-items: center
+            #about_title
+                margin-top: 0
+                --element-width: 85vw
+                width: var(--element-width)
+                outline: 1px solid red
+                line-height: 1
+                transform-origin: center top
+                font-size: calc(var(--element-width) / 5)
+                text-align: center
 
+            #about_line
+                height: 4px           
+                width: 0%             
+                background-color: white
+                margin-top: 20px    
+        #about_container
+            border: 1px solid orange 
+            width: 90%
+            text-align: center
+            font-size: 1.2rem
+            height: 85vh
+            border: 1px solid blue
+
+    #skills_page 
+        height: 200vh 
+        overflow: hidden 
+        position: relative 
+        #skills_container 
+            width: 60% 
+            height: 65vh 
+            overflow: hidden 
+            // position: relative 
+            margin-top: 5vh 
+            border: 1px solid red 
+            .skills_scroll 
+                display: flex 
+                flex-direction: column 
+                gap: 2vh 
+                position: relative
+                height: 100%
+                .skill_item 
+                    width: 100% 
+                    height: 50vh 
+                    border-radius: 20px 
+                    position: absolute 
+                    bottom: -50vh
+
+                #skill-1 
+                    background-color: red 
+                    z-index: 11
+                #skill-2 
+                    background-color: orange 
+                    z-index: 12
+                #skill-3 
+                    background-color: yellow 
+                    z-index: 13 
+                #skill-4 
+                    background-color: #13c27c 
+                    z-index: 14
+
+    // #skills_page
+    //     border-bottom: 5px solid black
+    //     #skills_container
+    //         border: 1px solid red
+    //         width: 90%
+    //         position: relative
+    //         height: auto
+    //         .skill_item
+    //             border: 1px solid green
+    //             width: 90vw
+    //             height: 50vh
+    //             max-height: 50vh
+    //             min-height: 50vh
+    //             border-radius: 20px
+    //             position: sticky
+    //             box-sizing: content-box
+    //         #skill-1
+    //             background-color: red
+    //             z-index: 10
+    //         #skill-2
+    //             background-color: orange
+    //             z-index: 11
+    //         #skill-3
+    //             background-color: yellow
+    //             z-index: 12
+    //         #skill-4
+    //             background-color: #13c27c3f
+    //             z-index: 13
 
