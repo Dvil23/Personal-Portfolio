@@ -1,0 +1,52 @@
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #22232e;
+}
+#custom_button {
+  position: relative;
+  overflow: hidden;
+  background: #42455a;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  font-size: 1rem;
+  color: #e0ffff;
+  font-weight: 500;
+  cursor: pointer;
+  z-index: 1;
+}
+#custom_button:active{
+  transform: scale(0.95);
+}
+#custom_button::before{
+  content: '';
+  position: absolute;
+  inset: -1px 30px;
+  background: #00c2cb;
+  transition: 500ms;
+  animation: rotate 4s linear infinite;
+  z-index: -1;
+}
+#custom_button:hover::before{
+  inset: -1px;
+}
+#custom_button::after{
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: #22232e;
+  z-index: -1;
+}
+@keyframes rotate {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}

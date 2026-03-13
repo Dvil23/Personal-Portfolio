@@ -1,81 +1,42 @@
 <%- include("partials/start.ejs") -%>
 
-<div id="page">
+<section id="page">
 
-    <div id="home_page">
-        <h1>DAVID VILLAPLANA GONZALEZ</h1>
-    </div>
+    <header class="header_styles" id="header_background"></header>
+    <header class="header_styles" id="header_container">
+        <div id="index">
+            <a href="#home_page">Home</a>
+            <a href="#about_container">About</a>
+            <a href="#skills_page">Skills</a>
+            <a href="#projects_page">Projects</a>
+            <a href="#contact_page">Contact</a>
+        </div>
+    </header>
 
-    <div class="port_section" id="about_page">
-        <div id="about_title_container">
-            <h1 id="about_title">ABOUT ME</h1>
-            <div id="about_line"></div>
-        </div>
-        <div id="about_container">
-            <p>
-                I am a software developer with a passion for creating innovative solutions to complex problems
-            </p>
-        </div>
-    </div>
+    <%- include("sections/home.ejs") -%>
+
+    <%- include("sections/about.ejs") -%>
+
+    <%- include("sections/skills.ejs") -%>
+
+    <%- include("sections/projects.ejs") -%>
+
+    <%- include("sections/contact.ejs") -%>
     
+</section>
 
 
-    <section class="port_section" id="skills_page">
-        <div class="title_container" id="skills_title_container"> 
-            <h1>MY SKILLS & TOOLS</h1>
-        </div>
-        <div id="skills_container">
-            <div class="skills_scroll">
-                <div class="skill_item" id="skill-1">JavaScript</div>
-                <div class="skill_item" id="skill-2">Angular</div>
-                <div class="skill_item" id="skill-3">Vue.js</div>
-                <div class="skill_item" id="skill-4">Node.js</div>
-            </div>
-        </div>
-    </section>
-
-    <div class="port_section" id="projects_page">
-        <div class="title_container"> 
-            <h1>PROJECTS</h1>
-        </div>
-        <div id="projects_container">
-            <p>
-                Here are some of my projects: Project 1, Project 2, Project 3
-            </p>
-        </div>
-    </div>
-    
-</div>
 
 <script src="/javascripts/move_about_title.js"></script>
 
-<script>
+<script src="/javascripts/start_animation.js"></script>
 
-gsap.registerPlugin(ScrollTrigger)
+<script src="/javascripts/header_animation.js"></script>
 
-let skills = gsap.utils.toArray('.skill_item')
-// let totalMove = skills.length * 50 
+<script src="/javascripts/stackable_skill_cards.js"></script>
 
-let tl = gsap.timeline({
-  scrollTrigger: {
-    trigger: '#skills_page',
-    start: 'top top',
-    end: () => '+=' + (window.innerHeight * skills.length),
-    scrub: true,
-    pin: true,
-    anticipatePin: 1
-  }
-})
+<script src="/javascripts/3d_image.js"></script>
 
+<script src="/javascripts/refresh.js"></script>
 
-
-skills.forEach((skill, i) => {
-  tl.to(skill, {
-    top: () => (i*6) + 'vh',
-    ease: 'none'
-  })
-})
-
-
-</script>
 <%- include("partials/end.ejs") -%>

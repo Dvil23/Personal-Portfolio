@@ -1,0 +1,139 @@
+#page
+    #about_page
+        background: var(--color-back-black)
+        position: relative
+        height: auto
+        min-height: auto
+        #about_title_container
+            height: 80vh
+            width: 90%
+            display: flex
+            flex-direction: column
+            align-items: center
+            width: 85%
+            #about_title
+                margin-top: 0
+                --element-width: 85vw
+                width: var(--element-width)
+                line-height: 1
+                transform-origin: center top
+                font-size: calc(var(--element-width) / 5)
+                text-align: center
+                max-width: 100%
+
+            #about_line
+                height: 4px           
+                width: 0%             
+                background-color: white
+                margin-top: 20px   
+                max-width: 100% 
+        #about_container
+            width: 85%
+            text-align: center
+            font-size: 1.2rem
+            height: 75vh
+            scroll-margin: 22vh
+            display: flex
+            align-items: center
+            justify-content: space-between
+            #about_info
+                margin-left: 5%
+                width: 50%
+                height: 80%
+                text-align: left
+                display: flex
+                flex-direction: column
+                justify-content: center
+                #about_intro
+                    width: 100%
+                    margin-bottom: 2vh
+                    margin-bottom: auto
+                    h3
+                        font-size: xx-large
+                        margin-top: 1vh
+                #about_info_text
+                    border-left: 1px solid red
+                    // height: 100%
+                    margin-bottom: 2vh
+                    padding-bottom: 1vh
+                    p
+                        margin-left: 2vw
+                        margin-top: 1vw
+                        font-weight: 500
+                        color: var(--color-gray)
+                #about_remarks
+                    margin-top: auto
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+                    gap: 1vw
+                    .about_remarks_container
+                        height: 100%
+                        display: flex
+                        align-items: center
+                        justify-content: center
+                        width: 32%
+                        border-right: 1px solid var(--color-white-gray)
+                        // border-margin: 0 1vw
+                        .remarks_icon_container
+                            width: 20%
+                            font-size: 40px
+                            color: var(--color-gray)
+                            margin-top: 1vh
+                        .remarks_text_container
+                            width: 80%
+                            height: 100%
+                            display: flex
+                            flex-direction: column
+                            align-items: center
+                            
+                            p
+                                // height: 100%
+                                font-size: small
+                                text-align: center
+                                display: inline
+                                color: var(--color-white-gray)
+                            h3
+                                margin-top: 1vh
+                                width: auto
+                                font-size: xx-large
+                                color: var(--color-yellow)
+                                // margin-top: auto
+                    #location_link
+                        text-decoration: none
+                        cursor: pointer
+                        i
+                            margin-top: 2vh
+
+
+            #about_img
+                width: 35%
+                height: 100%
+                display: flex
+                align-items: center
+                justify-content: center
+                z-index: 500
+                position: relative
+                #about_img_container
+                    width: 80%
+                    height: 80%
+                    perspective: 800px
+                    img
+                        border-radius: 12px
+                        width: 100%
+                        height: 100%
+                        object-fit: cover
+                        transform-style: preserve-3d
+                #about_shadow
+                    position: absolute
+                    bottom: -30px
+                    left: 0
+                    right: 0
+                    margin: auto
+                    width: 105%
+                    height: 20px
+                    background: radial-gradient(ellipse at center, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.295) 100%)
+                    border-radius: 50%
+                    filter: blur(10px)
+                    opacity: 1
+                    z-index: 1

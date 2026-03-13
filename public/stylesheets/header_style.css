@@ -1,0 +1,52 @@
+#page {
+  position: relative;
+}
+#page .header_styles {
+  z-index: 999;
+  width: 100%;
+  height: 8vh;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#page #header_background {
+  background: linear-gradient(to bottom, rgba(27, 22, 22, 0.8156862745) 0%, rgba(27, 22, 22, 0.301) 50%, rgba(27, 22, 22, 0));
+}
+#page #header_container {
+  width: 100%;
+}
+#page #header_container #index {
+  top: 5vh;
+  width: 80%;
+  padding-left: 3%;
+  padding-right: 3%;
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: "2px solid #FFFFFF ";
+  border-radius: 15px;
+}
+#page #header_container #index a {
+  font-size: larger;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+}
+#page #header_container #index a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom center;
+}
+#page #header_container #index a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -1px;
+  left: 0;
+  background-color: #FFFFFF;
+  transition: transform 0.25s ease-out;
+}/*# sourceMappingURL=header_style.css.map */

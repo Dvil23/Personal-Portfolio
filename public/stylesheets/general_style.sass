@@ -1,51 +1,198 @@
 :root 
-    --color-back-black: #191919
+    // --color-back-black: #191919
+    --color-yellow: #FFC607
+    --color-white-gray: #9c9c9c
+    --color-gray: #dfdfdf
+    // --color-background-black: #191919
+    --color-back-black: #1b1b1b
+    --color-white: #f5f5f5
 
 .passion-one-regular 
     font-family: "Passion One", sans-serif
     font-weight: 400
     font-style: normal
-
-
 .passion-one-bold 
     font-family: "Passion One", sans-serif
     font-weight: 700
     font-style: normal
-
-
 .passion-one-black 
     font-family: "Passion One", sans-serif
     font-weight: 900
     font-style: normal
 
+.passion-one-regular 
+  font-family: "Passion One", sans-serif
+  font-weight: 400
+  font-style: normal
+
+
+.passion-one-bold 
+  font-family: "Passion One", sans-serif
+  font-weight: 700
+  font-style: normal
+
+
+.passion-one-black 
+  font-family: "Passion One", sans-serif
+  font-weight: 900
+  font-style: normal
+
+
 *
     padding: 0
     margin: 0
     box-sizing: border-box
+    cursor: red
 
-h1,p
-    color: white
+h1,p,a,h3,span
+    color: var(--color-white)
 h1
     font-family: "Passion One", sans-serif
     font-weight: 700
+h3
+    font-family: "Passion One", sans-serif
+    font-weight: 400
+p,a,span
+    font-family: "Roboto", sans-serif
+    font-weight: 400
+
+@keyframes rotate_gradient
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(360deg)
 
 
+.d_two
+    animation-delay: 2s
+.d_twohalf
+    animation-delay: 2.5s
+.d_twohalfquart
+    animation-delay: 2.75s
+.d_three
+    animation-delay: 3s
+.d_threehalf
+    animation-delay: 3.5s
+    
 #page
     width: 100%
     min-height: 100vh
-    background-color: var(--color-back-black)
-    #home_page
-        background-color: #dcf0e2
+    position: relative
+    background-color: var(--color-background-black)
+    .yellow_highlight
+        font-family: "Passion One", sans-serif
+        font-weight: 400
+        color: var(--color-yellow)
+    .small_text
+        font-family: "Roboto", sans-serif
+        font-weight: 300
+        color: var(--color-white-gray)
+        font-size: medium
+    .italic
+        font-style: italic
+    .rectangle_button
+        width: auto
+        height: 100%
+        padding: 0.8vh 1.5vw
+        border: 2px solid #FFFFFF
+        border-radius: 12px
         display: flex
         align-items: center
-        justify-content: center
-        height: 100vh
-        width: 100%
+        gap: 0.6vw
+        white-space: nowrap
+        background: #000  // fondo oscuro para resaltar el holograma
+        color: white
+        cursor: pointer
+        text-decoration: none
+        position: relative
+        overflow: hidden
+        transition: all 0.5s ease
 
+        p, i
+            margin: 0
+            position: relative
+            z-index: 2  // para que el texto siempre quede arriba del efecto
+
+        &::before
+            content: ''
+            position: absolute
+            top: -50%
+            left: -50%
+            width: 200%
+            height: 200%
+            background: linear-gradient(
+                0deg, 
+                transparent, 
+                transparent 30%, 
+                rgba(255, 255, 255, 0.3)
+            )
+            transform: rotate(-45deg)
+            transition: all 0.5s ease
+            opacity: 0
+            
+
+        &:hover
+            transform: scale(1.05)
+            -webkit-box-shadow: 5px 5px 11px 5px #0000003f
+            box-shadow: 5px 5px 11px 5px #0000003f
+
+        &:hover::before
+            opacity: 1
+            transform: rotate(-45deg) translateY(100%)
+
+    .square_button
+        height: 100%
+        aspect-ratio: 1 / 1
+        overflow: hidden
+        position: relative
+        border-radius: 10px
+        .rotating_border
+            height: 100%
+            aspect-ratio: 1 / 1
+            background-color: #fff
+            position: relative
+            border-radius: 10px
+            animation: 1s
+            &::before
+                content: ''
+                position: absolute
+                top: -25%
+                left: -25%
+                width: 150%
+                height: 150%
+                border-radius: 50%
+                opacity: 0
+                transition: opacity 0.25s ease-in-out
+            &:hover::before
+                background: linear-gradient(90deg, #4f038e, #870088, #c02874, #e94e60, #ff843e, #ffc607)
+                animation: rotate_gradient 4s linear infinite
+                opacity: 1 
+
+            .inner_box
+                height: 90%
+                aspect-ratio: 1 / 1
+                background-color: #000000
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+                border-radius: 8px
+                color: #fff
+                display: flex
+                justify-content: center
+                align-items: center
+                text-align: center
+                padding: 5px
+                text-decoration: none
+                i
+                    font-size: 28px
+                
+        
     .port_section
+        // scroll-margin-top: 10vh
         width: 100%
         min-height: 100vh
-        background: linear-gradient(to bottom, #8026a3, #13c27c)
+        background-color: var(--color-back-black)
         display: flex
         flex-direction: column
         align-items: center
@@ -62,46 +209,19 @@ h1
                 font-size: calc(var(--element-width) / 5 *0.4)
                 text-align: center
                 
-    #about_page
-        position: relative
-        height: auto
-        min-height: auto
-        #about_title_container
-            height: 80vh
-            border: 1px solid green
-            width: 90%
-            display: flex
-            flex-direction: column
-            align-items: center
-            #about_title
-                margin-top: 0
-                --element-width: 85vw
-                width: var(--element-width)
-                outline: 1px solid red
-                line-height: 1
-                transform-origin: center top
-                font-size: calc(var(--element-width) / 5)
-                text-align: center
-
-            #about_line
-                height: 4px           
-                width: 0%             
-                background-color: white
-                margin-top: 20px    
-        #about_container
-            border: 1px solid orange 
-            width: 90%
-            text-align: center
-            font-size: 1.2rem
-            height: 85vh
-            border: 1px solid blue
-
+    
     #skills_page 
+        z-index: 2
         height: 200vh 
         overflow: hidden 
-        position: relative 
+        position: relative
+        .title_container
+            margin-top: 4vh
+            width: 85%
         #skills_container 
             width: 60% 
+            max-width: 600px
+            min-width: 500px
             height: 65vh 
             overflow: hidden 
             // position: relative 
@@ -114,13 +234,38 @@ h1
                 position: relative
                 height: 100%
                 .skill_item 
-                    width: 100% 
-                    height: 50vh 
+                    width: 100%
+                    height: auto 
+                    // max-height: 30vh
                     border-radius: 20px 
                     position: absolute 
-                    bottom: -50vh
+                    top: 60vh
+                    display: flex
+                    align-items: center
+                    // justify-content: center
+                    flex-direction: column
+                    .skill_title
+                        width: 90%
+                        height: auto
+                        margin-top: 1vh
+                        margin-bottom: 2vh
+                        text-align: center
+                        font-size: larger
+                    .skill_content
+                        width: 85%
+                        height: auto
+                        p
+                            font-size: larger
+                    .skill_remarks
+                        width: 85%
+                        height: auto
+                        text-align: center
+                        margin-top: 2vh
+                        margin-bottom: 2vh
+                        
 
                 #skill-1 
+                    top: 0
                     background-color: red 
                     z-index: 11
                 #skill-2 
@@ -161,4 +306,7 @@ h1
     //         #skill-4
     //             background-color: #13c27c3f
     //             z-index: 13
+    #projects_page
+        .title_container
+            margin-top: 4vh
 
