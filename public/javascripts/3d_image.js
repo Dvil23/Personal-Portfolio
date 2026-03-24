@@ -10,7 +10,7 @@ let shadow= document.querySelector('#about_shadow')
 let idle_animation= gsap.timeline({ repeat: -1, yoyo: true })
 
 idle_animation.to(img, {
-    y: -6,
+    y: -10,
     duration: 2.5,
     ease: "sine.inOut"
 })
@@ -37,8 +37,8 @@ img_container.addEventListener('mousemove', e => {
     let center_x = rect.width / 2
     let center_y = rect.height / 2
 
-    let rotate_y = (x - center_x) / 35
-    let rotate_x = (center_y - y) / 35
+    let rotate_y = (x - center_x) / 20
+    let rotate_x = (center_y - y) / 20
 
 
     gsap.to(img, {

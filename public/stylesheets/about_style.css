@@ -6,7 +6,6 @@
 }
 #page #about_page #about_title_container {
   height: 80vh;
-  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -44,7 +44,7 @@
     box-sizing: border-box
     cursor: red
 
-h1,p,a,h3,span
+h1,h2,p,a,h3,span,li
     color: var(--color-white)
 h1
     font-family: "Passion One", sans-serif
@@ -100,7 +100,7 @@ p,a,span
         align-items: center
         gap: 0.6vw
         white-space: nowrap
-        background: #000  // fondo oscuro para resaltar el holograma
+        background: #000 
         color: white
         cursor: pointer
         text-decoration: none
@@ -111,7 +111,7 @@ p,a,span
         p, i
             margin: 0
             position: relative
-            z-index: 2  // para que el texto siempre quede arriba del efecto
+            z-index: 2 
 
         &::before
             content: ''
@@ -146,13 +146,19 @@ p,a,span
         overflow: hidden
         position: relative
         border-radius: 10px
+        transition: 0.5s ease
+        &:hover
+            transform: scale(1.05)
+            -webkit-box-shadow: 5px 5px 11px 5px #0000003f
+            box-shadow: 5px 5px 11px 5px #0000003f
+            
         .rotating_border
             height: 100%
             aspect-ratio: 1 / 1
             background-color: #fff
             position: relative
             border-radius: 10px
-            animation: 1s
+            animation: 0.1s ease
             &::before
                 content: ''
                 position: absolute
@@ -162,11 +168,16 @@ p,a,span
                 height: 150%
                 border-radius: 50%
                 opacity: 0
-                transition: opacity 0.25s ease-in-out
+                transition: opacity 0.3s ease-in-out
             &:hover::before
                 background: linear-gradient(90deg, #4f038e, #870088, #c02874, #e94e60, #ff843e, #ffc607)
                 animation: rotate_gradient 4s linear infinite
-                opacity: 1 
+                opacity: 1
+            &:hover 
+                transform: scale(1.05)
+                -webkit-box-shadow: 5px 5px 11px 5px #0000003f
+                box-shadow: 5px 5px 11px 5px #0000003f
+            
 
             .inner_box
                 height: 90%
@@ -208,105 +219,14 @@ p,a,span
                 transform-origin: center top
                 font-size: calc(var(--element-width) / 5 *0.4)
                 text-align: center
-                
+
+    .square_info_box        
+        border-radius: 12px
+        border: 2px solid white
+        display: flex
+        align-items: center
+        flex-direction: column 
     
-    #skills_page 
-        z-index: 2
-        height: 200vh 
-        overflow: hidden 
-        position: relative
-        .title_container
-            margin-top: 4vh
-            width: 85%
-        #skills_container 
-            width: 60% 
-            max-width: 600px
-            min-width: 500px
-            height: 65vh 
-            overflow: hidden 
-            // position: relative 
-            margin-top: 5vh 
-            border: 1px solid red 
-            .skills_scroll 
-                display: flex 
-                flex-direction: column 
-                gap: 2vh 
-                position: relative
-                height: 100%
-                .skill_item 
-                    width: 100%
-                    height: auto 
-                    // max-height: 30vh
-                    border-radius: 20px 
-                    position: absolute 
-                    top: 60vh
-                    display: flex
-                    align-items: center
-                    // justify-content: center
-                    flex-direction: column
-                    .skill_title
-                        width: 90%
-                        height: auto
-                        margin-top: 1vh
-                        margin-bottom: 2vh
-                        text-align: center
-                        font-size: larger
-                    .skill_content
-                        width: 85%
-                        height: auto
-                        p
-                            font-size: larger
-                    .skill_remarks
-                        width: 85%
-                        height: auto
-                        text-align: center
-                        margin-top: 2vh
-                        margin-bottom: 2vh
-                        
-
-                #skill-1 
-                    top: 0
-                    background-color: red 
-                    z-index: 11
-                #skill-2 
-                    background-color: orange 
-                    z-index: 12
-                #skill-3 
-                    background-color: yellow 
-                    z-index: 13 
-                #skill-4 
-                    background-color: #13c27c 
-                    z-index: 14
-
-    // #skills_page
-    //     border-bottom: 5px solid black
-    //     #skills_container
-    //         border: 1px solid red
-    //         width: 90%
-    //         position: relative
-    //         height: auto
-    //         .skill_item
-    //             border: 1px solid green
-    //             width: 90vw
-    //             height: 50vh
-    //             max-height: 50vh
-    //             min-height: 50vh
-    //             border-radius: 20px
-    //             position: sticky
-    //             box-sizing: content-box
-    //         #skill-1
-    //             background-color: red
-    //             z-index: 10
-    //         #skill-2
-    //             background-color: orange
-    //             z-index: 11
-    //         #skill-3
-    //             background-color: yellow
-    //             z-index: 12
-    //         #skill-4
-    //             background-color: #13c27c3f
-    //             z-index: 13
-    #projects_page
-        .title_container
-            margin-top: 4vh
+    
+    
 

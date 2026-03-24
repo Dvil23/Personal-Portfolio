@@ -25,7 +25,54 @@
     
 </section>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+  new WOW().init()
+</script>
 
+<script>
+
+let items = document.querySelectorAll(".carrousel_item")
+let current = 0
+let interval
+
+function updateCarousel() {
+    items.forEach(item => {
+        item.classList.remove("active", "left", "right")
+    })
+
+    let total = items.length
+
+    let center = current
+    let left = (current - 1 + total) % total
+    let right = (current + 1) % total
+
+    items[center].classList.add("active")
+    items[left].classList.add("left")
+    items[right].classList.add("right")
+}
+
+function nextSlide() {
+    current = (current + 1) % items.length
+    updateCarousel()
+}
+
+// inicial
+updateCarousel()
+
+// 🔥 iniciar autopla
+interval = setInterval(nextSlide, 2500)
+
+// hover pause
+let carrousel_cont = document.querySelector(".carrousel_container")
+
+carrousel_cont.addEventListener("mouseenter", () => clearInterval(interval))
+
+carrousel_cont.addEventListener("mouseleave", () => {
+    interval = setInterval(nextSlide, 2500)
+})
+
+</script>
 
 <script src="/javascripts/move_about_title.js"></script>
 

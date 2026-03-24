@@ -81,4 +81,10 @@
   display: flex;
   justify-content: flex-end;
   text-align: end;
+}
+
+@media (max-width: 1000px) {
+  #page #home_page {
+    width: 100%;
+  }
 }/*# sourceMappingURL=home_style.css.map */

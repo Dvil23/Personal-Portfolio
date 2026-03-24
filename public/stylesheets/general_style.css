@@ -49,7 +49,7 @@
   cursor: red;
 }
 
-h1, p, a, h3, span {
+h1, h2, p, a, h3, span, li {
   color: var(--color-white);
 }
 
@@ -165,6 +165,11 @@ p, a, span {
   overflow: hidden;
   position: relative;
   border-radius: 10px;
+  transition: 0.5s ease;
+}
+#page .square_button:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 5px 11px 5px rgba(0, 0, 0, 0.2470588235);
 }
 #page .square_button .rotating_border {
   height: 100%;
@@ -172,7 +177,7 @@ p, a, span {
   background-color: #fff;
   position: relative;
   border-radius: 10px;
-  animation: 1s;
+  animation: 0.1s ease;
 }
 #page .square_button .rotating_border::before {
   content: "";
@@ -183,12 +188,16 @@ p, a, span {
   height: 150%;
   border-radius: 50%;
   opacity: 0;
-  transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 #page .square_button .rotating_border:hover::before {
   background: linear-gradient(90deg, #4f038e, #870088, #c02874, #e94e60, #ff843e, #ffc607);
   animation: rotate_gradient 4s linear infinite;
   opacity: 1;
+}
+#page .square_button .rotating_border:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 5px 11px 5px rgba(0, 0, 0, 0.2470588235);
 }
 #page .square_button .rotating_border .inner_box {
   height: 90%;
@@ -232,81 +241,10 @@ p, a, span {
   font-size: calc(var(--element-width) / 5 * 0.4);
   text-align: center;
 }
-#page #skills_page {
-  z-index: 2;
-  height: 200vh;
-  overflow: hidden;
-  position: relative;
-}
-#page #skills_page .title_container {
-  margin-top: 4vh;
-  width: 85%;
-}
-#page #skills_page #skills_container {
-  width: 60%;
-  max-width: 600px;
-  min-width: 500px;
-  height: 65vh;
-  overflow: hidden;
-  margin-top: 5vh;
-  border: 1px solid red;
-}
-#page #skills_page #skills_container .skills_scroll {
-  display: flex;
-  flex-direction: column;
-  gap: 2vh;
-  position: relative;
-  height: 100%;
-}
-#page #skills_page #skills_container .skills_scroll .skill_item {
-  width: 100%;
-  height: auto;
-  border-radius: 20px;
-  position: absolute;
-  top: 60vh;
+#page .square_info_box {
+  border-radius: 12px;
+  border: 2px solid white;
   display: flex;
   align-items: center;
   flex-direction: column;
-}
-#page #skills_page #skills_container .skills_scroll .skill_item .skill_title {
-  width: 90%;
-  height: auto;
-  margin-top: 1vh;
-  margin-bottom: 2vh;
-  text-align: center;
-  font-size: larger;
-}
-#page #skills_page #skills_container .skills_scroll .skill_item .skill_content {
-  width: 85%;
-  height: auto;
-}
-#page #skills_page #skills_container .skills_scroll .skill_item .skill_content p {
-  font-size: larger;
-}
-#page #skills_page #skills_container .skills_scroll .skill_item .skill_remarks {
-  width: 85%;
-  height: auto;
-  text-align: center;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-}
-#page #skills_page #skills_container .skills_scroll #skill-1 {
-  top: 0;
-  background-color: red;
-  z-index: 11;
-}
-#page #skills_page #skills_container .skills_scroll #skill-2 {
-  background-color: orange;
-  z-index: 12;
-}
-#page #skills_page #skills_container .skills_scroll #skill-3 {
-  background-color: yellow;
-  z-index: 13;
-}
-#page #skills_page #skills_container .skills_scroll #skill-4 {
-  background-color: #13c27c;
-  z-index: 14;
-}
-#page #projects_page .title_container {
-  margin-top: 4vh;
 }/*# sourceMappingURL=general_style.css.map */

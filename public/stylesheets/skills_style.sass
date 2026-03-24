@@ -1,0 +1,170 @@
+#page
+    #skills_page 
+        z-index: 2
+        overflow: hidden 
+        position: relative
+        .title_container
+            margin-top: 4vh
+            width: 85%
+
+        #skills_container 
+            width: 60% 
+            max-width: 600px
+            min-width: 500px
+            height: 75vh 
+            overflow: hidden 
+            // position: relative 
+            margin-top: 5vh 
+            // border: 1px solid red 
+            .skills_scroll 
+                display: flex 
+                flex-direction: column 
+                gap: 2vh 
+                position: relative
+                height: 100%
+                .skill_item 
+                    width: 100%
+                    height: auto 
+                    // max-height: 30vh
+                    border-radius: 20px 
+                    position: absolute 
+                    top: 75vh
+                    display: flex
+                    align-items: center
+                    // justify-content: center
+                    flex-direction: column
+                    .skill_title
+                        width: 90%
+                        height: auto
+                        margin-top: 1vh
+                        margin-bottom: 2vh
+                        text-align: center
+                        font-size: larger
+                    .skill_content
+                        width: 85%
+                        height: auto
+                        p
+                            font-size: larger
+                    .skill_remarks
+                        width: 85%
+                        height: auto
+                        text-align: center
+                        margin-top: 2vh
+                        margin-bottom: 2vh
+                        
+
+                #skill-1 
+                    top: 0
+                    background-color: red 
+                    z-index: 11
+                #skill-2 
+                    background-color: orange 
+                    z-index: 12
+                #skill-3 
+                    background-color: yellow 
+                    z-index: 13 
+                #skill-4 
+                    background-color: #13c27c 
+                    z-index: 14
+        #stack_container
+            width: 85vw
+            height: auto
+            // margin-top: 5vh
+            display: flex
+            flex-direction: column
+            align-items: center
+            #stack_header
+                width: 100%
+                display: flex
+                align-items: center
+                justify-content: center
+                text-align: center
+                flex-direction: column
+                h1
+                    --element-width: 85vw
+                    width: var(--element-width)
+                    line-height: 1
+                    transform-origin: center top
+                    font-size: calc(var(--element-width) / 8 *0.4)
+                    text-align: center
+                span
+                    margin-top: 2vh
+            #stacks_list
+                width: 85vw
+                padding-bottom: 2vh
+                display: flex
+                flex-direction: row
+                justify-content: space-between
+                margin-top: 5vh
+                .stack_type
+                    width: 27vw
+                    height: auto
+                    display: flex
+                    flex-direction: column
+                    align-items: center
+                    .stack_title
+                        border-bottom: 2px solid white
+                        padding-bottom: 1vh
+                        width: 27vw
+                        text-align: center
+                        display: flex
+                        justify-content: center
+                        align-content: center
+                    .stack_items_container
+                        margin-top: 2vh
+                        display: grid
+                        grid-template-columns: repeat(2,1fr)
+                        gap: 4vh 1vw
+                        width: 27vw
+                        .stack_item
+                            position: relative
+                            width: 13vw
+                            max-width: 13vw
+                            aspect-ratio: 1 / 1
+                            display: flex
+                            flex-direction: column
+                            align-items: center
+                            text-align: center
+                            padding-bottom: 0.5vh
+                            text-decoration: none
+                            *
+                                transition: 0.3s ease
+                            p
+                                margin-top: auto
+                                z-index: 2
+                                font-size: x-large
+                            img
+                                width: 8vw
+                                aspect-ratio: 1 / 1
+                                z-index: 2
+                                object-fit: contain
+                            .background_border
+                                background-color: grey 
+                                width: 100%
+                                height: 70%
+                                position: absolute
+                                z-index: 1
+                                bottom: 0
+                            &:hover
+                                img
+                                    width: 10vw
+                                .background_border
+                                    background-color: black
+                                p
+                                    font-size: larger
+                            &:hover::after
+                                transform: scaleX(1)
+                                transform-origin: bottom center
+                            &::after
+                                content: ''
+                                position: absolute
+                                width: 100%
+                                transform: scaleX(0)
+                                height: 2px
+                                bottom: -1px
+                                left: 0
+                                background-color: #FFFFFF
+                                transition: transform 0.25s ease-out
+
+                        
+                    
