@@ -21,6 +21,8 @@
 #page #contact_page #contact_container form {
   width: 55%;
   height: 100%;
+  background-color: var(--filler-purple);
+  border: 1px solid var(--color-gray-5);
 }
 #page #contact_page #contact_container form h3 {
   width: 90%;
@@ -45,8 +47,9 @@
   border-radius: 12px;
   height: 5vh;
   color: white;
-  background-color: var(--color-back-black);
+  background-color: var(--filler-dark-purple);
   font-size: large;
+  border: none;
 }
 #page #contact_page #contact_container form .contact_form_item textarea {
   height: 15vh;
@@ -75,8 +78,8 @@
   height: 100%;
   display: flex;
   align-items: center;
+  position: relative;
   flex-direction: column;
-  border-left: 1px solid white;
 }
 #page #contact_page #contact_container #contact_info span {
   font-size: larger;
@@ -102,7 +105,7 @@
   flex-direction: row;
   border: 1px solid white;
   border-radius: 12px;
-  background-color: #2b2b2a;
+  background-color: var(--filler-dark-purple);
 }
 #page #contact_page #contact_container #contact_info .contact_info_item i {
   margin-left: 2vw;
@@ -121,4 +124,65 @@
 }
 #page #contact_page #contact_container #contact_info #contact_info_buttons .square_button_right {
   margin-left: 2vw;
+}
+
+@media (max-width: 800px) {
+  #page #contact_page #contact_container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0vh;
+  }
+  #page #contact_page #contact_container form {
+    margin-top: 4vh;
+    width: 100%;
+    height: auto;
+    order: 2;
+  }
+  #page #contact_page #contact_container form #submit_message {
+    justify-content: center;
+    margin-top: 2vh;
+    width: 90%;
+  }
+  #page #contact_page #contact_container form #submit_message button {
+    width: 100%;
+    border-radius: 50px;
+  }
+  #page #contact_page #contact_container .left_border {
+    display: none;
+  }
+  #page #contact_page #contact_container #contact_info {
+    width: 100%;
+    height: auto;
+    border-left: none;
+    border-top: 1px solid white;
+    margin-top: 4vh;
+    order: 1;
+    border: none;
+    margin-top: 2vh;
+  }
+  #page #contact_page #contact_container #contact_info #contact_info_header {
+    display: none;
+  }
+  #page #contact_page #contact_container #contact_info .contact_info_item {
+    border-radius: 50px;
+    margin-top: 1vh;
+    height: 6vh;
+    max-height: 6vh;
+    min-height: 6vh;
+    width: 100%;
+  }
+  #page #contact_page #contact_container #contact_info .contact_info_item span {
+    font-size: small;
+    width: 100%;
+    text-align: center;
+    margin-right: 6vw;
+  }
+  #page #contact_page #contact_container #contact_info .contact_info_item i {
+    margin-left: 4vw;
+    margin-right: 0vw;
+  }
+  #page #contact_page #contact_container #contact_info #contact_info_buttons {
+    display: none;
+  }
 }/*# sourceMappingURL=contact_style.css.map */

@@ -12,7 +12,7 @@ var app = express();
 // ejs
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-
+app.set('env', 'development')
 
 app.use(logger('dev'));
 app.use(express.json());

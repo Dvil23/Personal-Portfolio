@@ -1,6 +1,5 @@
 #page
     #skills_page 
-        z-index: 2
         overflow: hidden 
         position: relative
         .title_container
@@ -8,31 +7,61 @@
             width: 85%
 
         #skills_container 
-            width: 60% 
-            max-width: 600px
-            min-width: 500px
-            height: 75vh 
-            overflow: hidden 
-            // position: relative 
+            width: 100% 
+            
+            height: 70vh 
+            // overflow: hidden 
+            position: relative 
             margin-top: 5vh 
-            // border: 1px solid red 
+            .progress_line
+                position: absolute
+                left: -5vw
+                top: 0
+                width: 4px
+                height: 0%
+                z-index: 999
+                display: flex
+                flex-direction: column
+                align-items: center
+                border-radius: 100px
+                opacity: 0%
+                display: none
+                transition: opacity 0.25s ease
+                background: linear-gradient(to bottom, #4f038e, #870088, #c02874, #e94e60, #ff843e, #ffc607)
+                .progress_circle
+                    border-radius: 50%
+                    width: 15px
+                    aspect-ratio: 1 / 1
+                    background-color: red
+                    margin-top: auto
+                    
             .skills_scroll 
                 display: flex 
                 flex-direction: column 
+                align-items: center
                 gap: 2vh 
                 position: relative
                 height: 100%
+                overflow-y: hidden
+                
+                box-sizing: content-box
+                padding-top: 5vh
                 .skill_item 
-                    width: 100%
+                    width: 60%
+                    max-width: 600px
+                    min-width: 400px
+                    margin-top: 4vh
                     height: auto 
-                    // max-height: 30vh
+                    min-height: 300px
                     border-radius: 20px 
                     position: absolute 
-                    top: 75vh
                     display: flex
                     align-items: center
-                    // justify-content: center
                     flex-direction: column
+                    cursor: pointer
+                    background-color: var(--filler-gray)
+                    // border: 2px solid var(--color-gray-2)
+                    
                     .skill_title
                         width: 90%
                         height: auto
@@ -40,36 +69,75 @@
                         margin-bottom: 2vh
                         text-align: center
                         font-size: larger
+
+                            
                     .skill_content
                         width: 85%
                         height: auto
+                        margin-bottom: 2vh
                         p
                             font-size: larger
+                            color: var(--color-gray-2)
                     .skill_remarks
                         width: 85%
                         height: auto
                         text-align: center
-                        margin-top: 2vh
+                        margin-top: auto
                         margin-bottom: 2vh
+                        font-size: larger
                         
 
                 #skill-1 
                     top: 0
-                    background-color: red 
                     z-index: 11
+                    border: 2px solid var(--color-white)
+                    scale: 0.98
+                    &:hover
+                        // border: 2px solid var(--color-purple)
+                        box-shadow: 0 0 .2rem #ffffff2e,0 0 .2rem #ffffff21,0 0 2rem #bb13fe28,0 0 0.8rem #bb13fe31,0 0 1rem #bb13fe37,inset 0 0 1.3rem #bb13fe2f
+                    h1
+                        color: var(--color-light-purple)
+                    h3
+                        color: var(--color-gray-1)
                 #skill-2 
-                    background-color: orange 
                     z-index: 12
+                    top: 49vh
+                    border: 2px solid var(--color-gray-2)
+                    &:hover
+                        // border: 2px solid var(--color-magenta)
+                        box-shadow: 0 0 .2rem #ffffff38,0 0 .2rem #ffffff1b,0 0 2rem #ff00c824,0 0 0.8rem #ff00c85f,0 0 1rem #ff00c862,inset 0 0 1.3rem #ff00c851
+                    h1
+                        color: var(--color-magenta)
+                    h3
+                        color: var(--color-gray-1)
                 #skill-3 
-                    background-color: yellow 
                     z-index: 13 
-                #skill-4 
-                    background-color: #13c27c 
+                    top: 56vh
+                    border: 2px solid var(--color-gray-3)
+                    &:hover
+                        // border: 2px solid var(--color-salmon)
+                        box-shadow: 0 0 .2rem #ffffff29,0 0 .2rem #ffffff25,0 0 2rem #ff58332d,0 0 0.8rem #ff583327,0 0 1rem #ff58332b,inset 0 0 1.3rem #ff583334
+
+                    h1
+                        color: var(--color-salmon)
+                    h3
+                        color: var(--color-gray-1)
+
+                #skill-4  
                     z-index: 14
+                    top: 63vh
+                    border: 2px solid var(--color-gray-5)
+                    &:hover
+                        // border: 2px solid var(--color-orange)
+                        box-shadow: 0 0 .2rem #ffffff23,0 0 .2rem #ffffff2a,0 0 2rem #ff853e27,0 0 0.8rem #ff853e2c,0 0 1rem #ff853e1a,inset 0 0 1.3rem #ff853e19
+                    h1
+                        color: var(--color-orange)
+                    h3
+                        color: var(--color-gray-1)
         #stack_container
             width: 85vw
             height: auto
-            // margin-top: 5vh
+            margin-top: 7vh
             display: flex
             flex-direction: column
             align-items: center
@@ -80,15 +148,9 @@
                 justify-content: center
                 text-align: center
                 flex-direction: column
-                h1
-                    --element-width: 85vw
-                    width: var(--element-width)
-                    line-height: 1
-                    transform-origin: center top
-                    font-size: calc(var(--element-width) / 8 *0.4)
-                    text-align: center
                 span
                     margin-top: 2vh
+                    color: var(--color-gray-3)
             #stacks_list
                 width: 85vw
                 padding-bottom: 2vh
@@ -103,15 +165,17 @@
                     flex-direction: column
                     align-items: center
                     .stack_title
-                        border-bottom: 2px solid white
+                        border-bottom: 2px solid var(--filler-light-purple-white)
                         padding-bottom: 1vh
                         width: 27vw
                         text-align: center
                         display: flex
                         justify-content: center
                         align-content: center
+                        h2
+                            color: var(--filler-light-purple-white)
                     .stack_items_container
-                        margin-top: 2vh
+                        margin-top: 3vh
                         display: grid
                         grid-template-columns: repeat(2,1fr)
                         gap: 4vh 1vw
@@ -139,7 +203,7 @@
                                 z-index: 2
                                 object-fit: contain
                             .background_border
-                                background-color: grey 
+                                background-color: var(--filler-purple) 
                                 width: 100%
                                 height: 70%
                                 position: absolute
@@ -149,7 +213,7 @@
                                 img
                                     width: 10vw
                                 .background_border
-                                    background-color: black
+                                    background-color: var(--filler-light-purple)
                                 p
                                     font-size: larger
                             &:hover::after
@@ -160,11 +224,90 @@
                                 position: absolute
                                 width: 100%
                                 transform: scaleX(0)
-                                height: 2px
-                                bottom: -1px
+                                height: 3px
+                                bottom: -2px
+                                border-radius: 100px
                                 left: 0
-                                background-color: #FFFFFF
+                                background-color: var(--filler-very-light-purple)
                                 transition: transform 0.25s ease-out
 
                         
+                    
+@media(max-width: 800px)
+    #page
+        #skills_page
+            margin-bottom: 0vh !important
+            padding-bottom: 0vh !important
+            #skills_container
+                width: 100%
+                // background-color: green
+                min-width: 0
+                height: 85vh
+                margin-top: 0vh
+                padding-top: 0vh
+                .progress_line
+                    display: none
+                .skills_scroll
+                    
+                    width: 100%
+                    .skill_item
+                        width: 90%
+                        max-height: 350px
+                        max-width: 80%
+                        min-width: 80%
+                        .skill_title
+                            margin-bottom: 0.5vh
+                            h1
+                                margin-top: 1vh
+                                --element-width: 70vw
+                                width: var(--element-width)
+                                font-size: calc(var(--element-width) / 13)
+                        .skill_content
+                            margin-top: 2vh
+                            margin-bottom: 2vh
+                            p
+                                line-height: 1.2
+                                --element-height: 300px
+                                font-size: calc(var(--element-width) / 27)
+                        .skill_remarks
+                            font-size: medium
+            #stack_container
+                width: 90vw
+                #stack_header
+                    h1
+                        font-size: min(10vw, 50px)
+                    span
+                        font-size: min(3vw, 20px)
+                #stacks_list
+                    width: 90vw
+                    margin-top: 0vh
+                    flex-direction: column
+                    margin-bottom: 0vh
+                    .stack_type
+                        width: 90vw
+                        margin-top: 3vh
+                        .stack_title
+                            width: 90vw
+                            
+                        .stack_items_container
+                            grid-template-columns: repeat(4,1fr)
+                            gap: 4vh 2vw
+                            width: 90vw
+                            .stack_item
+                                width: 100%
+                                max-width: 100%
+                                height: auto
+                                aspect-ratio: unset
+                                // background-color: green
+                                img
+                                    width: 50%
+                                    // margin-top: 2vh
+                                p
+                                    font-size: small
+                                &:hover
+                                    img
+                                        width: 50%
+
+                                    p
+                                        font-size: small
                     

@@ -16,19 +16,22 @@
                 height: 65vh
                 display: flex
                 justify-content: space-between
+                
                 .project_info
                     width: 40%
                     height: 65vh
+                    background-color: var(--filler-dark-purple)
                     .project_image
-                        width: 90%
-                        height: 50%
-                        border-radius: 12px
-                        background-color: white
+                        width: 100%
+                        display: flex
+                        justify-content: center
                         margin-top: 5%
-                        object-fit: cover
+                        border-radius: 12px
+                        max-height: 35vh
                         img
-                            width: 100%
-                            height: 100%
+                            max-width: 90%     
+                            height: auto  
+                            max-height: 50vh
                             border-radius: 12px
                     .project_title
                         width: 90%
@@ -36,45 +39,67 @@
                         margin-top: 5%
                         font-size: larger
                         text-align: center
-                    .project_stack
-                        width: 90%
-                        height: auto
-                        margin-top: 2vh
-                        display: flex
-                        gap: 1vw
-                        flex-wrap: wrap
-                        justify-content: center
-                        .stack_item
-                            padding: 0.5vh 1vw
-                            background-color: white
-                            border-radius: 8px
-                            font-size: smaller
-                    .project_links
-                        width: 90%
-                        height: 5vh
-                        margin-top: auto
-                        text-align: center
-                        margin-bottom: 5%
+
+
+                .project_stack
+                    width: 70%
+                    height: auto
+                    margin-top: 2vh
+                    display: flex
+                    gap: 1vw
+                    flex-wrap: wrap
+                    justify-content: center
+                    margin-bottom: 2vh
+                    .stack_item
+                        padding: 0.5vh 1vw
+                        background-color: var(--filler-dark-purple)
+                        border: 1px solid var(--color-gray-5)
+                        border-radius: 8px
+                        font-size: smaller
+                            
+                        &:nth-child(1)
+                            i
+                                color: var(--color-nodejs)
+                        &:nth-child(2)
+                            i
+                                color: var(--color-yellow)
+                        &:nth-child(3)
+                            i
+                                color: var(--color-sql)
+                        &:nth-child(4)
+                            i
+                                color: var(--color-javascript)
+                        &:nth-child(5)
+                            i
+                                color: var(--color-sass)
+                        i
+                            color: var(--color-gray-3)
+                .project_links
+                    width: 90%
+                    height: 5vh
+                    margin-top: auto
+                    text-align: center
+                    margin-bottom: 5%
+                    display: flex
+                    align-items: center
+                    justify-content: space-around
+                    .project_button
+                        width: 45%
+                        height: 100%
+                        text-decoration: none
                         display: flex
                         align-items: center
-                        justify-content: space-around
-                        .project_button
-                            width: 45%
-                            height: 100%
-                            text-decoration: none
-                            display: flex
-                            align-items: center
-                            justify-content: center
-                            text-align: center
-                            i
-                                margin-right: 5%
-                            span
-                                margin-right: 10%
+                        justify-content: center
+                        text-align: center
+                        i
+                            margin-right: 5%
+                        span
+                            margin-right: 10%
 
                 .project_explanation
                     width: 55%
                     height: 100%
-                    border-left: 2px solid white
+                    position: relative
                     display: flex
                     flex-direction: column
                     align-items: center
@@ -96,24 +121,31 @@
                                 display: flex
                                 justify-content: center
                                 align-items: center
-                                border: 1px solid blue
+                                border: 1px solid var(--color-yellow)
                                 border-radius: 5px
                                 i
-                                    color: blue
+                                    color: var(--color-yellow)
                                     font-size: large
 
                             span
                                 margin-left: 0.5vw
+                                color: var(--color-yellow)
                     .explanation_body
                         width: 90%
                         height: auto
                         margin-top: 2vh
+                        p
+                            color: var(--color-gray-1)
+                            i
+                                font-style: italic
                     .explanation_remarks
                         width: 83%
                         height: auto
-                        margin-top: 2vh
+                        margin-top: 0vh
+                        margin-bottom: 4vh
                         li
                             margin-top: 1vh
+                            color: var(--color-gray-3)
                     .carrousel_container
                         width: 95%
                         height: 25vh
@@ -122,7 +154,7 @@
                         justify-content: center
                         align-items: center
                         overflow: hidden
-
+    
                         .carrousel_showcase
                             width: 100%
                             height: 100%
@@ -136,20 +168,20 @@
                                 opacity: 0
                                 transition: all 0.6s ease
                                 z-index: 1
-
                                 display: flex
                                 flex-direction: column
                                 align-items: center
 
                                 img
                                     height: 18vh
-                                    max-width: 70vw // 🔥 evita que se salgan
+                                    max-width: 70vw
                                     width: auto
                                     border-radius: 12px
                                     transition: all 0.3s ease
 
                                 span
                                     margin-top: 0.5vh
+                                    transition: 0.25s ease
 
                             // CENTRO
                             .active
@@ -159,17 +191,118 @@
                                 &:hover
                                     img
                                         height: 19vh
+                                span
+                                    opacity: 1
 
                             // IZQUIERDA (usa vw)
                             .left
                                 transform: translate(calc(20% - 25vw), -50%) scale(0.7)
                                 opacity: 0.6
                                 z-index: 2
+                                cursor: pointer
+                                span
+                                    opacity: 0
 
                             // DERECHA (usa vw)
                             .right
                                 transform: translate(calc(-120% + 25vw), -50%) scale(0.7)
                                 opacity: 0.6
                                 z-index: 2
-                        
+                                cursor: pointer
+                                span
+                                    opacity: 0
+                    .project_stack
+                        display: none
+                    .project_links
+                        display: none   
 
+@media(max-width: 800px)
+    #page
+        #projects_page
+            padding-bottom: 5vh
+            #projects_container
+                margin-top: 4vh
+                .project_item
+                    flex-direction: column
+                    height: auto
+                    .project_info
+                        margin-top: 2vh
+                        width: 100%
+                        height: auto
+                        border: none
+                        gap: 0
+                        justify-content: center
+                        align-items: center
+                        .project_image
+                            display: none
+                        .project_stack
+                            display: none
+                        .project_links
+                            display: none
+                        .project_title
+                            margin-top: 0
+                            font-size: medium
+                            font-weight: 400
+                            border-bottom: 1px solid white
+                            width: auto
+
+                    .project_explanation
+                        width: 100%
+                        height: auto
+                        border-left: none
+                        .left_border
+                            display: none
+                        .explanation_header
+                            order: 1
+                            display: flex
+                            align-items: center
+                            justify-content: center
+                            margin-top: 1vh
+                            .explanation_type
+                                .square_icon_blue
+                                    display: none
+                                span
+                                    opacity: 100%
+                                    color: var(--color-yellow-accent)
+                                    font-size: small
+                        .carrousel_container
+                            order: 2
+                            margin-top: 2vh
+                            .carrousel_showcase
+                                .left
+                                    transform: translate(calc(60% - 25vw), -50%) scale(0.7)
+                                .right
+                                    transform: translate(calc(-160% + 25vw), -50%) scale(0.7)
+
+                        .explanation_body
+                            order: 3
+                        .explanation_remarks
+                            order: 4
+                        .project_stack
+                            width: 90%
+                            display: grid
+                            grid-template-columns: repeat(3,1fr)
+                            align-items: center
+                            order: 5
+                            border-top: 1px solid white
+                            border-bottom: 1px solid white
+                            margin-top: 0vh
+                            margin-bottom: 2vh
+                            padding-top: 1vh
+                            padding-bottom: 1vh
+                        .project_links
+                            display: flex
+                            order: 6
+                            justify-content: space-between
+                            flex-direction: column
+                            align-items: center
+                            gap: 2vh
+                            height: auto
+                            margin-bottom: 0
+                            margin-top: 2vh
+                            width: 100%
+                            .project_button
+                                height: 5vh
+                                width: 100%
+                                border-radius: 50px
+                                background-color: var(--filler-purple)

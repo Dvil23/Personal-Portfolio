@@ -49,4 +49,10 @@
   left: 0;
   background-color: #FFFFFF;
   transition: transform 0.25s ease-out;
+}
+
+@media (max-width: 800px) {
+  #page #header_container {
+    display: none;
+  }
 }/*# sourceMappingURL=header_style.css.map */

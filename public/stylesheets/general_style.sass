@@ -1,41 +1,59 @@
 :root 
     // --color-back-black: #191919
-    --color-yellow: #FFC607
-    --color-white-gray: #9c9c9c
-    --color-gray: #dfdfdf
-    // --color-background-black: #191919
-    --color-back-black: #1b1b1b
-    --color-white: #f5f5f5
+    --color-yellow: #e1970e
+    
+    --color-background-black: #1a1823
+    --color-white: #eeeeee
+    --main-gradient:  #4f038e, #870088, #c02874, #e94e60, #ff843e, #ffc607
 
-.passion-one-regular 
-    font-family: "Passion One", sans-serif
-    font-weight: 400
-    font-style: normal
-.passion-one-bold 
-    font-family: "Passion One", sans-serif
-    font-weight: 700
-    font-style: normal
-.passion-one-black 
-    font-family: "Passion One", sans-serif
-    font-weight: 900
-    font-style: normal
+    --color-purple: #4f038e
+    --color-magenta: #870088
+    --color-red: #c02874
+    --color-salmon: #e94e60
+    --color-orange: #ff843e
+    --color-bright-yellow: #ffc607
 
-.passion-one-regular 
-  font-family: "Passion One", sans-serif
-  font-weight: 400
-  font-style: normal
+    --color-dark-purple: #1F0138
+    --color-light-purple: #7314c0
+    --color-dark-magenta: #170017
+    --color-dark-red: #17040D
+    --color-dark-salmon: #170709
+    --color-dark-orange: #170B05
+    --color-dark-yellow: #171100
 
 
-.passion-one-bold 
-  font-family: "Passion One", sans-serif
-  font-weight: 700
-  font-style: normal
+    --color-pink-accent: #940694
+    --color-yellow-accent: #e1970e
+
+    --color-violet: #E63F3E
+
+    --filler-gray: #1d1b1d
+    --filler-white: #8f8f8f
+    --filler-purple: #302c41
+    --filler-dark-purple: #23202e
+    --filler-light-purple: #4e4869
+    --filler-very-light-purple: #baa3e4
+    --filler-light-purple-white: #dbd6e7
+
+    --color-gray-1: #dfdfdf
+    --color-gray-2: #cfcfcf
+    --color-gray-3: #c5c5c5
+    --color-gray-5: #9c9c9c
+    
+    --color-nodejs: #73AC62
+    --color-sass: #CE679A
+    --color-blue: #005E86
+    --color-javascript: #D4B830
+    --color-sql: #005E86
 
 
-.passion-one-black 
-  font-family: "Passion One", sans-serif
-  font-weight: 900
-  font-style: normal
+
+.pink_accent
+    color: var(--color-pink-accent)
+.yellow_accent
+    color: var(--color-yellow-accent)
+.violet_accent
+    color: var(--color-violet)
 
 
 *
@@ -49,12 +67,19 @@ h1,h2,p,a,h3,span,li
 h1
     font-family: "Passion One", sans-serif
     font-weight: 700
+    
+    
 h3
     font-family: "Passion One", sans-serif
     font-weight: 400
 p,a,span
-    font-family: "Roboto", sans-serif
-    font-weight: 400
+    font-family: "Noto Sans", sans-serif
+    font-optical-sizing: auto
+    font-weight: 200
+    font-style: normal
+    font-variation-settings: "wdth" 100
+    line-height: 1.4
+
 
 @keyframes rotate_gradient
     0%
@@ -76,7 +101,6 @@ p,a,span
     
 #page
     width: 100%
-    min-height: 100vh
     position: relative
     background-color: var(--color-background-black)
     .yellow_highlight
@@ -86,7 +110,7 @@ p,a,span
     .small_text
         font-family: "Roboto", sans-serif
         font-weight: 300
-        color: var(--color-white-gray)
+        color: var(--color-gray-5)
         font-size: medium
     .italic
         font-style: italic
@@ -94,14 +118,14 @@ p,a,span
         width: auto
         height: 100%
         padding: 0.8vh 1.5vw
-        border: 2px solid #FFFFFF
+        border: 2px solid var(--color-white)
         border-radius: 12px
         display: flex
         align-items: center
         gap: 0.6vw
         white-space: nowrap
-        background: #000 
-        color: white
+        background: var(--color-background-black) 
+        color: var(--color-white)
         cursor: pointer
         text-decoration: none
         position: relative
@@ -155,7 +179,7 @@ p,a,span
         .rotating_border
             height: 100%
             aspect-ratio: 1 / 1
-            background-color: #fff
+            background-color: var(--color-white)
             position: relative
             border-radius: 10px
             animation: 0.1s ease
@@ -173,7 +197,7 @@ p,a,span
                 background: linear-gradient(90deg, #4f038e, #870088, #c02874, #e94e60, #ff843e, #ffc607)
                 animation: rotate_gradient 4s linear infinite
                 opacity: 1
-            &:hover 
+            &:hover  
                 transform: scale(1.05)
                 -webkit-box-shadow: 5px 5px 11px 5px #0000003f
                 box-shadow: 5px 5px 11px 5px #0000003f
@@ -182,7 +206,7 @@ p,a,span
             .inner_box
                 height: 90%
                 aspect-ratio: 1 / 1
-                background-color: #000000
+                background-color: var(--filler-gray)
                 position: absolute
                 top: 50%
                 left: 50%
@@ -203,7 +227,6 @@ p,a,span
         // scroll-margin-top: 10vh
         width: 100%
         min-height: 100vh
-        background-color: var(--color-back-black)
         display: flex
         flex-direction: column
         align-items: center
@@ -211,7 +234,7 @@ p,a,span
         padding-bottom: 5vh
         box-sizing: content-box
         .title_container
-            border-bottom: 4px solid white
+            border-bottom: 4px solid var(--filler-light-purple-white)
             h1
                 --element-width: 85vw
                 width: var(--element-width)
@@ -219,13 +242,36 @@ p,a,span
                 transform-origin: center top
                 font-size: calc(var(--element-width) / 5 *0.4)
                 text-align: center
+                
 
     .square_info_box        
         border-radius: 12px
-        border: 2px solid white
+        border: 2px solid var(--color-gray-5)
         display: flex
         align-items: center
         flex-direction: column 
+    .left_border
+        width: 4px
+        height: 100%
+        background: linear-gradient(to top, #4f038e, #870088, #c02874, #e94e60, #ff843e, #ffc607)
+        background: var(--filler-light-purple-white)
+        opacity: 40%
+        margin-bottom: 2vh
+        position: absolute
+        left: 0
+        border-radius: 100px
+
+@media(max-width: 800px)
+    #page
+        .port_section
+            padding-top: 3vh
+            padding-bottom: 3vh
+            .title_container
+                h1
+                    --element-width: 90vw
+                    font-size: calc(var(--element-width) / 3 *0.4)
+                        
+
     
     
     

@@ -1,5 +1,4 @@
 #page #skills_page {
-  z-index: 2;
   overflow: hidden;
   position: relative;
 }
@@ -8,29 +7,59 @@
   width: 85%;
 }
 #page #skills_page #skills_container {
-  width: 60%;
-  max-width: 600px;
-  min-width: 500px;
-  height: 75vh;
-  overflow: hidden;
+  width: 100%;
+  height: 70vh;
+  position: relative;
   margin-top: 5vh;
+}
+#page #skills_page #skills_container .progress_line {
+  position: absolute;
+  left: -5vw;
+  top: 0;
+  width: 4px;
+  height: 0%;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 100px;
+  opacity: 0%;
+  display: none;
+  transition: opacity 0.25s ease;
+  background: linear-gradient(to bottom, #4f038e, #870088, #c02874, #e94e60, #ff843e, #ffc607);
+}
+#page #skills_page #skills_container .progress_line .progress_circle {
+  border-radius: 50%;
+  width: 15px;
+  aspect-ratio: 1/1;
+  background-color: red;
+  margin-top: auto;
 }
 #page #skills_page #skills_container .skills_scroll {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2vh;
   position: relative;
   height: 100%;
+  overflow-y: hidden;
+  box-sizing: content-box;
+  padding-top: 5vh;
 }
 #page #skills_page #skills_container .skills_scroll .skill_item {
-  width: 100%;
+  width: 60%;
+  max-width: 600px;
+  min-width: 400px;
+  margin-top: 4vh;
   height: auto;
+  min-height: 300px;
   border-radius: 20px;
   position: absolute;
-  top: 75vh;
   display: flex;
   align-items: center;
   flex-direction: column;
+  cursor: pointer;
+  background-color: var(--filler-gray);
 }
 #page #skills_page #skills_container .skills_scroll .skill_item .skill_title {
   width: 90%;
@@ -43,37 +72,81 @@
 #page #skills_page #skills_container .skills_scroll .skill_item .skill_content {
   width: 85%;
   height: auto;
+  margin-bottom: 2vh;
 }
 #page #skills_page #skills_container .skills_scroll .skill_item .skill_content p {
   font-size: larger;
+  color: var(--color-gray-2);
 }
 #page #skills_page #skills_container .skills_scroll .skill_item .skill_remarks {
   width: 85%;
   height: auto;
   text-align: center;
-  margin-top: 2vh;
+  margin-top: auto;
   margin-bottom: 2vh;
+  font-size: larger;
 }
 #page #skills_page #skills_container .skills_scroll #skill-1 {
   top: 0;
-  background-color: red;
   z-index: 11;
+  border: 2px solid var(--color-white);
+  scale: 0.98;
+}
+#page #skills_page #skills_container .skills_scroll #skill-1:hover {
+  box-shadow: 0 0 0.2rem rgba(255, 255, 255, 0.1803921569), 0 0 0.2rem rgba(255, 255, 255, 0.1294117647), 0 0 2rem rgba(187, 19, 254, 0.1568627451), 0 0 0.8rem rgba(187, 19, 254, 0.1921568627), 0 0 1rem rgba(187, 19, 254, 0.2156862745), inset 0 0 1.3rem rgba(187, 19, 254, 0.1843137255);
+}
+#page #skills_page #skills_container .skills_scroll #skill-1 h1 {
+  color: var(--color-light-purple);
+}
+#page #skills_page #skills_container .skills_scroll #skill-1 h3 {
+  color: var(--color-gray-1);
 }
 #page #skills_page #skills_container .skills_scroll #skill-2 {
-  background-color: orange;
   z-index: 12;
+  top: 49vh;
+  border: 2px solid var(--color-gray-2);
+}
+#page #skills_page #skills_container .skills_scroll #skill-2:hover {
+  box-shadow: 0 0 0.2rem rgba(255, 255, 255, 0.2196078431), 0 0 0.2rem rgba(255, 255, 255, 0.1058823529), 0 0 2rem rgba(255, 0, 200, 0.1411764706), 0 0 0.8rem rgba(255, 0, 200, 0.3725490196), 0 0 1rem rgba(255, 0, 200, 0.3843137255), inset 0 0 1.3rem rgba(255, 0, 200, 0.3176470588);
+}
+#page #skills_page #skills_container .skills_scroll #skill-2 h1 {
+  color: var(--color-magenta);
+}
+#page #skills_page #skills_container .skills_scroll #skill-2 h3 {
+  color: var(--color-gray-1);
 }
 #page #skills_page #skills_container .skills_scroll #skill-3 {
-  background-color: yellow;
   z-index: 13;
+  top: 56vh;
+  border: 2px solid var(--color-gray-3);
+}
+#page #skills_page #skills_container .skills_scroll #skill-3:hover {
+  box-shadow: 0 0 0.2rem rgba(255, 255, 255, 0.1607843137), 0 0 0.2rem rgba(255, 255, 255, 0.1450980392), 0 0 2rem rgba(255, 88, 51, 0.1764705882), 0 0 0.8rem rgba(255, 88, 51, 0.1529411765), 0 0 1rem rgba(255, 88, 51, 0.168627451), inset 0 0 1.3rem rgba(255, 88, 51, 0.2039215686);
+}
+#page #skills_page #skills_container .skills_scroll #skill-3 h1 {
+  color: var(--color-salmon);
+}
+#page #skills_page #skills_container .skills_scroll #skill-3 h3 {
+  color: var(--color-gray-1);
 }
 #page #skills_page #skills_container .skills_scroll #skill-4 {
-  background-color: #13c27c;
   z-index: 14;
+  top: 63vh;
+  border: 2px solid var(--color-gray-5);
+}
+#page #skills_page #skills_container .skills_scroll #skill-4:hover {
+  box-shadow: 0 0 0.2rem rgba(255, 255, 255, 0.137254902), 0 0 0.2rem rgba(255, 255, 255, 0.1647058824), 0 0 2rem rgba(255, 133, 62, 0.1529411765), 0 0 0.8rem rgba(255, 133, 62, 0.1725490196), 0 0 1rem rgba(255, 133, 62, 0.1019607843), inset 0 0 1.3rem rgba(255, 133, 62, 0.0980392157);
+}
+#page #skills_page #skills_container .skills_scroll #skill-4 h1 {
+  color: var(--color-orange);
+}
+#page #skills_page #skills_container .skills_scroll #skill-4 h3 {
+  color: var(--color-gray-1);
 }
 #page #skills_page #stack_container {
   width: 85vw;
   height: auto;
+  margin-top: 7vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -86,16 +159,9 @@
   text-align: center;
   flex-direction: column;
 }
-#page #skills_page #stack_container #stack_header h1 {
-  --element-width: 85vw;
-  width: var(--element-width);
-  line-height: 1;
-  transform-origin: center top;
-  font-size: calc(var(--element-width) / 8 * 0.4);
-  text-align: center;
-}
 #page #skills_page #stack_container #stack_header span {
   margin-top: 2vh;
+  color: var(--color-gray-3);
 }
 #page #skills_page #stack_container #stacks_list {
   width: 85vw;
@@ -113,7 +179,7 @@
   align-items: center;
 }
 #page #skills_page #stack_container #stacks_list .stack_type .stack_title {
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid var(--filler-light-purple-white);
   padding-bottom: 1vh;
   width: 27vw;
   text-align: center;
@@ -121,8 +187,11 @@
   justify-content: center;
   align-content: center;
 }
+#page #skills_page #stack_container #stacks_list .stack_type .stack_title h2 {
+  color: var(--filler-light-purple-white);
+}
 #page #skills_page #stack_container #stacks_list .stack_type .stack_items_container {
-  margin-top: 2vh;
+  margin-top: 3vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 4vh 1vw;
@@ -156,7 +225,7 @@
      object-fit: contain;
 }
 #page #skills_page #stack_container #stacks_list .stack_type .stack_items_container .stack_item .background_border {
-  background-color: grey;
+  background-color: var(--filler-purple);
   width: 100%;
   height: 70%;
   position: absolute;
@@ -167,7 +236,7 @@
   width: 10vw;
 }
 #page #skills_page #stack_container #stacks_list .stack_type .stack_items_container .stack_item:hover .background_border {
-  background-color: black;
+  background-color: var(--filler-light-purple);
 }
 #page #skills_page #stack_container #stacks_list .stack_type .stack_items_container .stack_item:hover p {
   font-size: larger;
@@ -181,9 +250,102 @@
   position: absolute;
   width: 100%;
   transform: scaleX(0);
-  height: 2px;
-  bottom: -1px;
+  height: 3px;
+  bottom: -2px;
+  border-radius: 100px;
   left: 0;
-  background-color: #FFFFFF;
+  background-color: var(--filler-very-light-purple);
   transition: transform 0.25s ease-out;
+}
+
+@media (max-width: 800px) {
+  #page #skills_page {
+    margin-bottom: 0vh !important;
+    padding-bottom: 0vh !important;
+  }
+  #page #skills_page #skills_container {
+    width: 100%;
+    min-width: 0;
+    height: 85vh;
+    margin-top: 0vh;
+    padding-top: 0vh;
+  }
+  #page #skills_page #skills_container .progress_line {
+    display: none;
+  }
+  #page #skills_page #skills_container .skills_scroll {
+    width: 100%;
+  }
+  #page #skills_page #skills_container .skills_scroll .skill_item {
+    width: 90%;
+    max-height: 350px;
+    max-width: 80%;
+    min-width: 80%;
+  }
+  #page #skills_page #skills_container .skills_scroll .skill_item .skill_title {
+    margin-bottom: 0.5vh;
+  }
+  #page #skills_page #skills_container .skills_scroll .skill_item .skill_title h1 {
+    margin-top: 1vh;
+    --element-width: 70vw;
+    width: var(--element-width);
+    font-size: calc(var(--element-width) / 13);
+  }
+  #page #skills_page #skills_container .skills_scroll .skill_item .skill_content {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+  }
+  #page #skills_page #skills_container .skills_scroll .skill_item .skill_content p {
+    line-height: 1.2;
+    --element-height: 300px;
+    font-size: calc(var(--element-width) / 27);
+  }
+  #page #skills_page #skills_container .skills_scroll .skill_item .skill_remarks {
+    font-size: medium;
+  }
+  #page #skills_page #stack_container {
+    width: 90vw;
+  }
+  #page #skills_page #stack_container #stack_header h1 {
+    font-size: min(10vw, 50px);
+  }
+  #page #skills_page #stack_container #stack_header span {
+    font-size: min(3vw, 20px);
+  }
+  #page #skills_page #stack_container #stacks_list {
+    width: 90vw;
+    margin-top: 0vh;
+    flex-direction: column;
+    margin-bottom: 0vh;
+  }
+  #page #skills_page #stack_container #stacks_list .stack_type {
+    width: 90vw;
+    margin-top: 3vh;
+  }
+  #page #skills_page #stack_container #stacks_list .stack_type .stack_title {
+    width: 90vw;
+  }
+  #page #skills_page #stack_container #stacks_list .stack_type .stack_items_container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4vh 2vw;
+    width: 90vw;
+  }
+  #page #skills_page #stack_container #stacks_list .stack_type .stack_items_container .stack_item {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: unset;
+  }
+  #page #skills_page #stack_container #stacks_list .stack_type .stack_items_container .stack_item img {
+    width: 50%;
+  }
+  #page #skills_page #stack_container #stacks_list .stack_type .stack_items_container .stack_item p {
+    font-size: small;
+  }
+  #page #skills_page #stack_container #stacks_list .stack_type .stack_items_container .stack_item:hover img {
+    width: 50%;
+  }
+  #page #skills_page #stack_container #stacks_list .stack_type .stack_items_container .stack_item:hover p {
+    font-size: small;
+  }
 }/*# sourceMappingURL=skills_style.css.map */
