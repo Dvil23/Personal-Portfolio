@@ -3,7 +3,7 @@
         <h1>CONTACT ME</h1>
     </div>
     <div id="contact_container">
-        <form class="square_info_box wow animate__animated animate__fadeInLeft" data-wow-delay="0.3s" data-wow-duration="0.7s">
+        <form id="contact_form" action="/send-message" method="POST" class="square_info_box wow animate__animated animate__fadeInLeft" data-wow-delay="0.3s" data-wow-duration="0.7s">
 
             <h3>Send me a message directly</h3>
             <div class="contact_form_item">
@@ -68,3 +68,7 @@
         </div>
     </div>
 </div>
+
+<script>
+    const RECAPTCHA_SITE_KEY = "<%= process.env.RECAPTCHA_SITE_KEY %>"
+</script>

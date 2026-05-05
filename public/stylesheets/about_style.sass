@@ -30,7 +30,9 @@
             width: 85%
             text-align: center
             font-size: 1.2rem
-            height: 75vh
+            height: auto
+            margin-top: 2vh
+            min-height: 75vh
             scroll-margin: 22vh
             display: flex
             align-items: center
@@ -80,7 +82,7 @@
                         border-radius: 100px
                         
                     p
-                        
+                        font-size: medium
                         margin-left: 2vw
                         margin-top: 1vw
                         font-weight: 500
@@ -183,6 +185,7 @@
             #about_img
                 width: 45%
                 height: 100%
+                min-height: 60vh
                 display: flex
                 align-items: center
                 justify-content: center
@@ -221,18 +224,20 @@
             #about_container
                 #about_img
                     width: 45%
-                    height: 80%
+                    height: 50%
+                    min-height: 50vh
+                    justify-content: flex-end
                 #about_info
                     width: 55%
                     
                     #about_intro
                         #about_intro_text
-                            flex-direction: column
-                            gap: 0
-                            margin-top: 1vh
-                            margin-bottom: 1vh
+                            flex-direction: row
                             h3
                                 margin-top: 0
+                                font-size: 29px
+                        .small_text
+                            font-size: 17px
                     #about_remarks
                         .about_remarks_wrapper
                             height: 100%
@@ -418,7 +423,6 @@
                                     width: 100%
                                     font-size: xx-large
                                     color: var(--color-yellow)
-                                    // margin-top: auto
 
                         #location_link
                             text-decoration: none

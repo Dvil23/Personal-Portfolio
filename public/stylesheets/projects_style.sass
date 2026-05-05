@@ -16,10 +16,11 @@
                 height: 65vh
                 display: flex
                 justify-content: space-between
-                
+                align-items: center
                 .project_info
                     width: 40%
-                    height: 65vh
+                    height: auto
+                    max-height: 65vh
                     background-color: var(--filler-dark-purple)
                     .project_image
                         width: 100%
@@ -40,61 +41,60 @@
                         font-size: larger
                         text-align: center
 
-
-                .project_stack
-                    width: 70%
-                    height: auto
-                    margin-top: 2vh
-                    display: flex
-                    gap: 1vw
-                    flex-wrap: wrap
-                    justify-content: center
-                    margin-bottom: 2vh
-                    .stack_item
-                        padding: 0.5vh 1vw
-                        background-color: var(--filler-dark-purple)
-                        border: 1px solid var(--color-gray-5)
-                        border-radius: 8px
-                        font-size: smaller
-                            
-                        &:nth-child(1)
+                    .project_stack
+                        width: 70%
+                        height: auto
+                        margin-top: 2vh
+                        display: flex
+                        gap: 1vw
+                        flex-wrap: wrap
+                        justify-content: center
+                        margin-bottom: 2vh
+                        .stack_item
+                            padding: 0.5vh 1vw
+                            background-color: var(--filler-dark-purple)
+                            border: 1px solid var(--color-gray-5)
+                            border-radius: 8px
+                            font-size: smaller
+                                
+                            &:nth-child(1)
+                                i
+                                    color: var(--color-nodejs)
+                            &:nth-child(2)
+                                i
+                                    color: var(--color-yellow)
+                            &:nth-child(3)
+                                i
+                                    color: var(--color-sql)
+                            &:nth-child(4)
+                                i
+                                    color: var(--color-javascript)
+                            &:nth-child(5)
+                                i
+                                    color: var(--color-sass)
                             i
-                                color: var(--color-nodejs)
-                        &:nth-child(2)
-                            i
-                                color: var(--color-yellow)
-                        &:nth-child(3)
-                            i
-                                color: var(--color-sql)
-                        &:nth-child(4)
-                            i
-                                color: var(--color-javascript)
-                        &:nth-child(5)
-                            i
-                                color: var(--color-sass)
-                        i
-                            color: var(--color-gray-3)
-                .project_links
-                    width: 90%
-                    height: 5vh
-                    margin-top: auto
-                    text-align: center
-                    margin-bottom: 5%
-                    display: flex
-                    align-items: center
-                    justify-content: space-around
-                    .project_button
-                        width: 45%
-                        height: 100%
-                        text-decoration: none
+                                color: var(--color-gray-3)
+                    .project_links
+                        width: 90%
+                        height: 5vh
+                        margin-top: 5vh
+                        text-align: center
+                        margin-bottom: 5%
                         display: flex
                         align-items: center
-                        justify-content: center
-                        text-align: center
-                        i
-                            margin-right: 5%
-                        span
-                            margin-right: 10%
+                        justify-content: space-around
+                        .project_button
+                            width: 45%
+                            height: 100%
+                            text-decoration: none
+                            display: flex
+                            align-items: center
+                            justify-content: center
+                            text-align: center
+                            i
+                                margin-right: 5%
+                            span
+                                margin-right: 10%
 
                 .project_explanation
                     width: 55%
@@ -183,7 +183,6 @@
                                     margin-top: 0.5vh
                                     transition: 0.25s ease
 
-                            // CENTRO
                             .active
                                 transform: translate(-50%, -50%) scale(1)
                                 opacity: 1
@@ -194,7 +193,6 @@
                                 span
                                     opacity: 1
 
-                            // IZQUIERDA (usa vw)
                             .left
                                 transform: translate(calc(20% - 25vw), -50%) scale(0.7)
                                 opacity: 0.6
@@ -203,7 +201,6 @@
                                 span
                                     opacity: 0
 
-                            // DERECHA (usa vw)
                             .right
                                 transform: translate(calc(-120% + 25vw), -50%) scale(0.7)
                                 opacity: 0.6
@@ -290,19 +287,40 @@
                             margin-bottom: 2vh
                             padding-top: 1vh
                             padding-bottom: 1vh
+                            .stack_item
+                                &:nth-child(1)
+                                
+                                    i
+                                        color: var(--color-nodejs)
+                                &:nth-child(2)
+                                    i
+                                        color: var(--color-yellow)
+                                &:nth-child(3)
+                                    i
+                                        color: var(--color-sql)
+                                &:nth-child(4)
+                                    i
+                                        color: var(--color-javascript)
+                                &:nth-child(5)
+                                    i
+                                        color: var(--color-sass)
+                            
                         .project_links
+                            
                             display: flex
                             order: 6
                             justify-content: space-between
-                            flex-direction: column
                             align-items: center
                             gap: 2vh
                             height: auto
                             margin-bottom: 0
                             margin-top: 2vh
-                            width: 100%
+                            width: 90%
                             .project_button
                                 height: 5vh
-                                width: 100%
+                                width: 50%
                                 border-radius: 50px
                                 background-color: var(--filler-purple)
+                                display: flex
+                                align-items: center
+                                justify-content: center
